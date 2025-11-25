@@ -1,5 +1,4 @@
-﻿using Projeto_Final_M17A;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -74,21 +73,21 @@ namespace Projeto_Final_M17A
             //criar tabelas
             //criar tabela livros
             sql = @"create table Alunos (
-            idAluno int identity primary key,
+            idAluno INT IDENTITY(1,1) PRIMARY KEY,
             nome varchar(100) not null ,
-            data_nascimento date,
-            email varchar(100),
-            telefone varchar(15),
+            data_nascimento date CHECK (data_nascimento <= CAST(GETDATE() AS DATE)),
+            email varchar(100) CHECK (email LIKE '%@%.%') ,
+            telefone varchar(15), 
             morada varchar(200),
-            codigo_postal varchar(10), 
+            codigo_postal varchar(10) CHECK (codigo_postal LIKE '[1-9][0-9][0-9][0-9]-[0-9][0-9][0-9]'), 
             );
             CREATE TABLE Cursos(
             id_curso INT PRIMARY KEY AUTO_INCREMENT,
             nome_curso VARCHAR(100) NOT NULL,
             descricao TEXT,
-            duracao_meses INT,
-            carga_horaria INT,
-            nivel VARCHAR(13), -- Básico, Intermediário, Avançado
+            duracao_meses INT CHECK (duracao_meses > 0 AND duracao_meses <= 36),
+            carga_horaria INT CHECK (carga_horaria > 0 AND carga_horaria <= 3700),
+            nivel VARCHAR(13)  CHECK (nivel IN ('Básico', 'Intermediário', 'Avançado')), -- Básico, Intermediário, Avançado
             ativo BIT DEFAULT 1,
 
             );
@@ -98,10 +97,13 @@ namespace Projeto_Final_M17A
             id_curso INT NOT NULL,
             data_matricula DATE DEFAULT GETDATE(),
             data_inicio DATE,
-            data_termino DATE,
-            status BIT DEFAULT 1, -- Ex: sim ou nao
+            data_termino DATE ,
+            estado BIT DEFAULT 1, -- Ex: sim ou nao
             FOREIGN KEY (id_aluno) REFERENCES Alunos(id_aluno),
-            FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso)
+            FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso),
+
+            constraint valida_data_inicio check (data_inicio >= data_matricula),
+            constraint valida_data_termino check (data_termino > data_inicio),
             )";
             comando = new SqlCommand(sql, ligacaoSQL);
             comando.ExecuteNonQuery();

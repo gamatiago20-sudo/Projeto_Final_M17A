@@ -36,17 +36,21 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.tb_idaluno = new System.Windows.Forms.TextBox();
+            this.tb_morada = new System.Windows.Forms.TextBox();
+            this.tb_telefone = new System.Windows.Forms.TextBox();
+            this.tb_email = new System.Windows.Forms.TextBox();
+            this.tb_nome = new System.Windows.Forms.TextBox();
+            this.tb_codigopostal = new System.Windows.Forms.TextBox();
+            this.dtp_data = new System.Windows.Forms.DateTimePicker();
             this.dgv_alunos = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.bt_guardar = new System.Windows.Forms.Button();
+            this.lb_feedback = new System.Windows.Forms.Label();
+            this.bt_cancelar = new System.Windows.Forms.Button();
+            this.bt_editar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alunos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,54 +125,54 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "id_aluno";
             // 
-            // textBox1
+            // tb_idaluno
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 20);
-            this.textBox1.TabIndex = 7;
+            this.tb_idaluno.Location = new System.Drawing.Point(112, 30);
+            this.tb_idaluno.Name = "tb_idaluno";
+            this.tb_idaluno.Size = new System.Drawing.Size(215, 20);
+            this.tb_idaluno.TabIndex = 7;
             // 
-            // textBox2
+            // tb_morada
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 157);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 20);
-            this.textBox2.TabIndex = 8;
+            this.tb_morada.Location = new System.Drawing.Point(109, 157);
+            this.tb_morada.Name = "tb_morada";
+            this.tb_morada.Size = new System.Drawing.Size(218, 20);
+            this.tb_morada.TabIndex = 8;
             // 
-            // textBox3
+            // tb_telefone
             // 
-            this.textBox3.Location = new System.Drawing.Point(109, 130);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(218, 20);
-            this.textBox3.TabIndex = 9;
+            this.tb_telefone.Location = new System.Drawing.Point(109, 130);
+            this.tb_telefone.Name = "tb_telefone";
+            this.tb_telefone.Size = new System.Drawing.Size(218, 20);
+            this.tb_telefone.TabIndex = 9;
             // 
-            // textBox4
+            // tb_email
             // 
-            this.textBox4.Location = new System.Drawing.Point(91, 106);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(236, 20);
-            this.textBox4.TabIndex = 10;
+            this.tb_email.Location = new System.Drawing.Point(91, 106);
+            this.tb_email.Name = "tb_email";
+            this.tb_email.Size = new System.Drawing.Size(236, 20);
+            this.tb_email.TabIndex = 10;
             // 
-            // textBox6
+            // tb_nome
             // 
-            this.textBox6.Location = new System.Drawing.Point(91, 56);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(236, 20);
-            this.textBox6.TabIndex = 12;
+            this.tb_nome.Location = new System.Drawing.Point(91, 56);
+            this.tb_nome.Name = "tb_nome";
+            this.tb_nome.Size = new System.Drawing.Size(236, 20);
+            this.tb_nome.TabIndex = 12;
             // 
-            // textBox5
+            // tb_codigopostal
             // 
-            this.textBox5.Location = new System.Drawing.Point(152, 183);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(175, 20);
-            this.textBox5.TabIndex = 13;
+            this.tb_codigopostal.Location = new System.Drawing.Point(152, 183);
+            this.tb_codigopostal.Name = "tb_codigopostal";
+            this.tb_codigopostal.Size = new System.Drawing.Size(175, 20);
+            this.tb_codigopostal.TabIndex = 13;
             // 
-            // dateTimePicker1
+            // dtp_data
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(171, 82);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(156, 20);
-            this.dateTimePicker1.TabIndex = 14;
+            this.dtp_data.Location = new System.Drawing.Point(171, 82);
+            this.dtp_data.Name = "dtp_data";
+            this.dtp_data.Size = new System.Drawing.Size(156, 20);
+            this.dtp_data.TabIndex = 14;
             // 
             // dgv_alunos
             // 
@@ -177,6 +181,7 @@
             this.dgv_alunos.Name = "dgv_alunos";
             this.dgv_alunos.Size = new System.Drawing.Size(346, 173);
             this.dgv_alunos.TabIndex = 15;
+            this.dgv_alunos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_alunos_CellContentClick);
             // 
             // button1
             // 
@@ -198,20 +203,62 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // bt_guardar
+            // 
+            this.bt_guardar.Location = new System.Drawing.Point(43, 238);
+            this.bt_guardar.Name = "bt_guardar";
+            this.bt_guardar.Size = new System.Drawing.Size(101, 33);
+            this.bt_guardar.TabIndex = 17;
+            this.bt_guardar.Text = "Guardar";
+            this.bt_guardar.UseVisualStyleBackColor = true;
+            this.bt_guardar.Click += new System.EventHandler(this.bt_guardar_Click);
+            // 
+            // lb_feedback
+            // 
+            this.lb_feedback.AutoSize = true;
+            this.lb_feedback.Location = new System.Drawing.Point(1, 304);
+            this.lb_feedback.Name = "lb_feedback";
+            this.lb_feedback.Size = new System.Drawing.Size(0, 13);
+            this.lb_feedback.TabIndex = 18;
+            // 
+            // bt_cancelar
+            // 
+            this.bt_cancelar.Location = new System.Drawing.Point(171, 238);
+            this.bt_cancelar.Name = "bt_cancelar";
+            this.bt_cancelar.Size = new System.Drawing.Size(91, 33);
+            this.bt_cancelar.TabIndex = 19;
+            this.bt_cancelar.Text = "Cancelar";
+            this.bt_cancelar.UseVisualStyleBackColor = true;
+            this.bt_cancelar.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // bt_editar
+            // 
+            this.bt_editar.Location = new System.Drawing.Point(112, 277);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Size = new System.Drawing.Size(89, 31);
+            this.bt_editar.TabIndex = 20;
+            this.bt_editar.Text = "Editar";
+            this.bt_editar.UseVisualStyleBackColor = true;
+            this.bt_editar.Click += new System.EventHandler(this.button3_Click);
+            // 
             // F_alunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bt_editar);
+            this.Controls.Add(this.bt_cancelar);
+            this.Controls.Add(this.lb_feedback);
+            this.Controls.Add(this.bt_guardar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgv_alunos);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dtp_data);
+            this.Controls.Add(this.tb_codigopostal);
+            this.Controls.Add(this.tb_nome);
+            this.Controls.Add(this.tb_email);
+            this.Controls.Add(this.tb_telefone);
+            this.Controls.Add(this.tb_morada);
+            this.Controls.Add(this.tb_idaluno);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -221,6 +268,7 @@
             this.Controls.Add(this.label1);
             this.Name = "F_alunos";
             this.Text = "F_alunos";
+            this.Load += new System.EventHandler(this.F_alunos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alunos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,16 +284,20 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox tb_idaluno;
+        private System.Windows.Forms.TextBox tb_morada;
+        private System.Windows.Forms.TextBox tb_telefone;
+        private System.Windows.Forms.TextBox tb_email;
+        private System.Windows.Forms.TextBox tb_nome;
+        private System.Windows.Forms.TextBox tb_codigopostal;
+        private System.Windows.Forms.DateTimePicker dtp_data;
         private System.Windows.Forms.DataGridView dgv_alunos;
         private System.Windows.Forms.Button button1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button bt_guardar;
+        private System.Windows.Forms.Label lb_feedback;
+        private System.Windows.Forms.Button bt_cancelar;
+        private System.Windows.Forms.Button bt_editar;
     }
 }
