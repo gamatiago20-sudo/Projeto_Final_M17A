@@ -10,14 +10,14 @@ namespace Projeto_Final_M17A.Alunos
 {
     internal class alunos
     {
-        public string idaluno {  get; set; }
+        public int naluno {  get; set; }
         public string nome { get; set; }
         public string email { get; set; }
         public string morada { get; set; }
         public string telefone { get; set; }
         public DateTime data_nascimento { get; set; }
         public string codigopostal { get; set; }
-        private BaseDados bd;
+        BaseDados bd;
 
         public alunos(BaseDados bd)
         {
@@ -26,15 +26,15 @@ namespace Projeto_Final_M17A.Alunos
 
         internal void Adicionar()
         {
-            string sql = @"INSERT INTO Alunos (idaluno, nome, data_nascinento, email, telefone, morada, codigopostal)
-                           VALUES (@idaluno, @nome, @data_nascimento, @email, @telefone, @morada, @codigopostal)";
+            string sql = @"INSERT INTO Alunos (naluno, nome, data_nascinento, email, telefone, morada, codigopostal)
+                           VALUES (@naluno, @nome, @data_nascimento, @email, @telefone, @morada, @codigopostal)";
             List<SqlParameter> parametros = new List<SqlParameter>()
             {
                 new SqlParameter()
                 {
-                    ParameterName = "@idaluno",
+                    ParameterName = "@naluno",
                     SqlDbType = System.Data.SqlDbType.VarChar,
-                    Value = this.idaluno
+                    Value = this.naluno
 
                 },
                 new SqlParameter()
@@ -80,8 +80,9 @@ namespace Projeto_Final_M17A.Alunos
 
                 },
 
-
+                
             };
+            bd.ExecutarSQL(sql, parametros);
         }
 
         internal List<string> Validar()
@@ -90,14 +91,37 @@ namespace Projeto_Final_M17A.Alunos
             //validar o nome
             if (string.IsNullOrEmpty(nome) || nome.Length < 3)
             {
-                erros.Add("O título do livro deve ter pelo menos 3 letras");
+                erros.Add("O nome do aluno deve ter pelo menos 3 letras");
             }
             return erros;
         }
 
         public DataTable Listar()
         {
-            return bd.DevolveSQL("SELECT idaluno,nome,email,telefone FROM alunos order by nome ");
+            return bd.DevolveSQL("SELECT naluno,nome,email,telefone FROM alunos order by nome ");
+        }
+
+        internal void Apagar()
+        {
+            // Isto é seguro porque o naluno é um inteiro e nao é inserido pelo utilizador
+            string sql = "DELETE FROM alunos WHERE naluno = @naluno";
+            bd.ExecutarSQL(sql);
+        }
+
+        internal DataTable Procurar(string campo, string texto_pesquisar)
+        {
+            string sql = "SELECT naluno, nome, email, telefone FROM alunos";
+            sql += " WHERE " + campo + " LIKE @pesquisa ";
+            List<SqlParameter> parametros = new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "@pesquisa",
+                    SqlDbType = SqlDbType.VarChar,
+                    Value = "%" + texto_pesquisar + "%"
+                }
+            };
+            return bd.DevolveSQL(sql, parametros);
         }
     }
 }

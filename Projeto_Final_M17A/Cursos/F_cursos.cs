@@ -12,9 +12,20 @@ namespace Projeto_Final_M17A.Cursos
 {
     public partial class F_cursos : Form
     {
-        public F_cursos()
+        BaseDados bd;
+        public F_cursos(BaseDados bd)
         {
-            InitializeComponent();
+            this.bd = bd;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

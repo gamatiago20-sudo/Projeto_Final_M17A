@@ -211,6 +211,9 @@
     <EmbeddedResource Include="Alunos\F_alunos.resx">
       <DependentUpon>F_alunos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cursos\F_cursos.resx">
+      <DependentUpon>F_cursos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

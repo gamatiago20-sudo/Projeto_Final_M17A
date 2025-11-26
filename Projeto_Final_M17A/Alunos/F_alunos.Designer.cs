@@ -36,7 +36,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tb_idaluno = new System.Windows.Forms.TextBox();
+            this.tb_naluno = new System.Windows.Forms.TextBox();
             this.tb_morada = new System.Windows.Forms.TextBox();
             this.tb_telefone = new System.Windows.Forms.TextBox();
             this.tb_email = new System.Windows.Forms.TextBox();
@@ -51,6 +51,9 @@
             this.lb_feedback = new System.Windows.Forms.Label();
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_editar = new System.Windows.Forms.Button();
+            this.bt_eliminar = new System.Windows.Forms.Button();
+            this.tb_pesquisa = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_alunos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,9 +63,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(40, 184);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 16);
+            this.label1.Size = new System.Drawing.Size(102, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "codigo_postal";
+            this.label1.Text = "codigo postal";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -91,9 +94,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(40, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 16);
+            this.label4.Size = new System.Drawing.Size(121, 16);
             this.label4.TabIndex = 2;
-            this.label4.Text = "data_nascimento";
+            this.label4.Text = "data nascimento";
             // 
             // label5
             // 
@@ -121,16 +124,16 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(40, 34);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 16);
+            this.label8.Size = new System.Drawing.Size(62, 16);
             this.label8.TabIndex = 6;
-            this.label8.Text = "id_aluno";
+            this.label8.Text = "id aluno";
             // 
-            // tb_idaluno
+            // tb_naluno
             // 
-            this.tb_idaluno.Location = new System.Drawing.Point(112, 30);
-            this.tb_idaluno.Name = "tb_idaluno";
-            this.tb_idaluno.Size = new System.Drawing.Size(215, 20);
-            this.tb_idaluno.TabIndex = 7;
+            this.tb_naluno.Location = new System.Drawing.Point(112, 30);
+            this.tb_naluno.Name = "tb_naluno";
+            this.tb_naluno.Size = new System.Drawing.Size(215, 20);
+            this.tb_naluno.TabIndex = 7;
             // 
             // tb_morada
             // 
@@ -233,19 +236,50 @@
             // 
             // bt_editar
             // 
-            this.bt_editar.Location = new System.Drawing.Point(112, 277);
+            this.bt_editar.Location = new System.Drawing.Point(43, 277);
             this.bt_editar.Name = "bt_editar";
-            this.bt_editar.Size = new System.Drawing.Size(89, 31);
+            this.bt_editar.Size = new System.Drawing.Size(101, 31);
             this.bt_editar.TabIndex = 20;
             this.bt_editar.Text = "Editar";
             this.bt_editar.UseVisualStyleBackColor = true;
             this.bt_editar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // bt_eliminar
+            // 
+            this.bt_eliminar.Location = new System.Drawing.Point(171, 277);
+            this.bt_eliminar.Name = "bt_eliminar";
+            this.bt_eliminar.Size = new System.Drawing.Size(91, 31);
+            this.bt_eliminar.TabIndex = 21;
+            this.bt_eliminar.Text = "Eliminar";
+            this.bt_eliminar.UseVisualStyleBackColor = true;
+            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
+            // 
+            // tb_pesquisa
+            // 
+            this.tb_pesquisa.Location = new System.Drawing.Point(417, 4);
+            this.tb_pesquisa.Name = "tb_pesquisa";
+            this.tb_pesquisa.Size = new System.Drawing.Size(346, 20);
+            this.tb_pesquisa.TabIndex = 22;
+            this.tb_pesquisa.TextChanged += new System.EventHandler(this.tb_pesquisa_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(650, 238);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 43);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Ver Cursos";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // F_alunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.tb_pesquisa);
+            this.Controls.Add(this.bt_eliminar);
             this.Controls.Add(this.bt_editar);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.lb_feedback);
@@ -258,7 +292,7 @@
             this.Controls.Add(this.tb_email);
             this.Controls.Add(this.tb_telefone);
             this.Controls.Add(this.tb_morada);
-            this.Controls.Add(this.tb_idaluno);
+            this.Controls.Add(this.tb_naluno);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -284,7 +318,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tb_idaluno;
+        private System.Windows.Forms.TextBox tb_naluno;
         private System.Windows.Forms.TextBox tb_morada;
         private System.Windows.Forms.TextBox tb_telefone;
         private System.Windows.Forms.TextBox tb_email;
@@ -299,5 +333,8 @@
         private System.Windows.Forms.Label lb_feedback;
         private System.Windows.Forms.Button bt_cancelar;
         private System.Windows.Forms.Button bt_editar;
+        private System.Windows.Forms.Button bt_eliminar;
+        private System.Windows.Forms.TextBox tb_pesquisa;
+        private System.Windows.Forms.Button button2;
     }
 }

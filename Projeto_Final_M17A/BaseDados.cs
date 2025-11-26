@@ -73,7 +73,7 @@ namespace Projeto_Final_M17A
             //criar tabelas
             //criar tabela livros
             sql = @"create table Alunos (
-            idAluno INT IDENTITY(1,1) PRIMARY KEY,
+            idaluno INT IDENTITY(1,1) PRIMARY KEY,
             nome varchar(100) not null ,
             data_nascimento date CHECK (data_nascimento <= CAST(GETDATE() AS DATE)),
             email varchar(100) CHECK (email LIKE '%@%.%') ,
