@@ -18,9 +18,9 @@ namespace Projeto_Final_M17A.Alunos
         int naluno = 0;
 
 
-        public F_alunos(object bd)
+        public F_alunos(BaseDados bd)
         {
-            InitializeComponent();
+            this.bd = bd;
            
         }
 
@@ -44,7 +44,7 @@ namespace Projeto_Final_M17A.Alunos
 
         private void bt_guardar_Click(object sender, EventArgs e)
         {
-            // criar um objeto do tipo livro
+            // criar um objeto do tipo aluno
             alunos novo = new alunos(bd);
             // preencher os dados do aluno
             novo.nome = tb_nome.Text;

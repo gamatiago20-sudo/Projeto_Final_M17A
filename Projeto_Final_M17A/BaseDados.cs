@@ -75,14 +75,14 @@ namespace Projeto_Final_M17A
             sql = @"create table Alunos (
             idaluno INT IDENTITY(1,1) PRIMARY KEY,
             nome varchar(100) not null ,
-            data_nascimento date CHECK (data_nascimento <= CAST(GETDATE() AS DATE)),
+            data_nascimento date CHECK (DATEDIFF (year,data_nascimento,GETDATE())>0),
             email varchar(100) CHECK (email LIKE '%@%.%') ,
             telefone varchar(15), 
             morada varchar(200),
             codigo_postal varchar(10) CHECK (codigo_postal LIKE '[1-9][0-9][0-9][0-9]-[0-9][0-9][0-9]'), 
             );
             CREATE TABLE Cursos(
-            id_curso INT PRIMARY KEY AUTO_INCREMENT,
+            id_curso INT IDENTITY(1,1) PRIMARY KEY,
             nome_curso VARCHAR(100) NOT NULL,
             descricao TEXT,
             duracao_meses INT CHECK (duracao_meses > 0 AND duracao_meses <= 36),
@@ -92,7 +92,7 @@ namespace Projeto_Final_M17A
 
             );
             CREATE TABLE Matriculas(
-            id_matricula INT PRIMARY KEY AUTO_INCREMENT,
+            id_matricula INT IDENTITY(1,1) PRIMARY KEY,
             id_aluno INT NOT NULL,
             id_curso INT NOT NULL,
             data_matricula DATE DEFAULT GETDATE(),

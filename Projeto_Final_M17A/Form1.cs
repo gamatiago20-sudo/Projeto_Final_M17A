@@ -1,4 +1,6 @@
 ﻿using Projeto_Final_M17A.Alunos;
+using Projeto_Final_M17A.Cursos;
+using Projeto_Final_M17A.Matriculas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +35,23 @@ namespace Projeto_Final_M17A
         private void alunosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             F_alunos f = new F_alunos(bd);
+            f.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_cursos f = new F_cursos(bd);
+            f.Show();
+        }
+
+        private void matriculasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_matriculas f = new F_matriculas(bd);
             f.Show();
         }
     }

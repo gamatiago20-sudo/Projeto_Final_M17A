@@ -62,7 +62,7 @@
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.R)));
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -88,12 +88,14 @@
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
             this.cursosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cursosToolStripMenuItem.Text = "Cursos";
+            this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
             // matriculasToolStripMenuItem
             // 
             this.matriculasToolStripMenuItem.Name = "matriculasToolStripMenuItem";
             this.matriculasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.matriculasToolStripMenuItem.Text = "Matriculas";
+            this.matriculasToolStripMenuItem.Click += new System.EventHandler(this.matriculasToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -104,6 +106,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

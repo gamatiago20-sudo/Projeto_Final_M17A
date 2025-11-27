@@ -182,13 +182,13 @@
             this.dgv_alunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_alunos.Location = new System.Drawing.Point(417, 30);
             this.dgv_alunos.Name = "dgv_alunos";
-            this.dgv_alunos.Size = new System.Drawing.Size(346, 173);
+            this.dgv_alunos.Size = new System.Drawing.Size(346, 241);
             this.dgv_alunos.TabIndex = 15;
             this.dgv_alunos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_alunos_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(417, 238);
+            this.button1.Location = new System.Drawing.Point(417, 300);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 43);
             this.button1.TabIndex = 16;
@@ -264,7 +264,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(650, 238);
+            this.button2.Location = new System.Drawing.Point(650, 300);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 43);
             this.button2.TabIndex = 23;
