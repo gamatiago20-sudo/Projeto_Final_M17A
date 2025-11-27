@@ -51,7 +51,7 @@ namespace Projeto_Final_M17A.Cursos
             // limpar o formulario
             limparForm();
             // atualizar a lista de cursos
-            Listaralunos();
+            Listarcursos();
             // feedback user
             lb_feedback2.Text = "Curso atualizado com sucesso!";
             lb_feedback2.ForeColor = Color.Red;
@@ -86,7 +86,7 @@ namespace Projeto_Final_M17A.Cursos
             // limpar o formulario
             limparForm();
             // atualizar a lista de cursos
-            Listaralunos();
+            Listarcursos();
             // feedback user
             lb_feedback2.Text = "Curso adicionado com sucesso!";
             lb_feedback2.ForeColor = Color.Red;
@@ -138,10 +138,10 @@ namespace Projeto_Final_M17A.Cursos
             //confirmacao
             if (MessageBox.Show("Confirmar", "Tem a certeza que pretende eliminar o aluno selecionado?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                alunos apagar = new alunos(bd);
-                apagar.naluno = ncurso;
+                cursos apagar = new cursos(bd);
+                apagar.ncurso = ncurso;
                 apagar.Apagar();
-                Listaralunos();
+                Listarcursos();
                 ncurso = 0;
             }
         }

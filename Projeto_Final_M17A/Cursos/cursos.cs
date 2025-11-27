@@ -109,5 +109,12 @@ namespace Projeto_Final_M17A.Cursos
         {
             return bd.DevolveSQL("SELECT ncurso,nomecurso,descricao,nivel FROM cursos order by nomecurso ");
         }
+
+        internal void Apagar()
+        {
+            // Isto é seguro porque o naluno é um inteiro e nao é inserido pelo utilizador
+            string sql = "DELETE FROM cursos WHERE ncurso = @ncurso";
+            bd.ExecutarSQL(sql);
+        }
     }
 }
