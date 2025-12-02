@@ -19,7 +19,7 @@ namespace Projeto_Final_M17A
         public Form1()
         {
             InitializeComponent();
-            bd = new BaseDados("ProjetoFinal_12H");
+            bd = new BaseDados("Projeto_Final_M17");
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)

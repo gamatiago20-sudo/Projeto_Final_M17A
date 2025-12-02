@@ -20,6 +20,8 @@ namespace Projeto_Final_M17A.Alunos
 
         public F_alunos(BaseDados bd)
         {
+            InitializeComponent();
+           
             this.bd = bd;
            
         }
@@ -48,7 +50,6 @@ namespace Projeto_Final_M17A.Alunos
             alunos novo = new alunos(bd);
             // preencher os dados do aluno
             novo.nome = tb_nome.Text;
-            novo.naluno = int.Parse(tb_naluno.Text);
             novo.data_nascimento = dtp_data.Value;
             novo.email = tb_email.Text;
             novo.telefone = tb_telefone.Text;
@@ -83,7 +84,6 @@ namespace Projeto_Final_M17A.Alunos
             tb_nome.Text = "";
             tb_email.Text = "";
             tb_morada.Text = "";
-            tb_naluno.Text = "";
             tb_telefone.Text = "";
             tb_codigopostal.Text = "";
             dtp_data.Value = DateTime.Now;
@@ -119,11 +119,10 @@ namespace Projeto_Final_M17A.Alunos
             alunos novo = new alunos(bd);
             novo.naluno = naluno;
             // preencher os dados do aluno
-            novo.naluno = int.Parse(tb_naluno.Text);
             novo.nome = tb_nome.Text;
             novo.data_nascimento = dtp_data.Value;
             novo.email = tb_email.Text;
-            novo.telefone = tb_email.Text;
+            novo.telefone = tb_telefone.Text;
             novo.morada = tb_morada.Text;
             novo.codigopostal = tb_codigopostal.Text;
             // validar os dados
@@ -139,7 +138,7 @@ namespace Projeto_Final_M17A.Alunos
                 return;
             }
             // guardar os dados na base de dados
-            novo.Adicionar();
+            novo.Atualizar();
 
             // limpar o formulario
             limparForm();
@@ -153,11 +152,13 @@ namespace Projeto_Final_M17A.Alunos
         private void dgv_alunos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+
         }
 
         private void bt_eliminar_Click(object sender, EventArgs e)
         {
             EliminarAluno();
+            
         }
 
         private void EliminarAluno()
@@ -190,6 +191,31 @@ namespace Projeto_Final_M17A.Alunos
             F_cursos tela = new F_cursos(bd);
             tela.Show();
             this.Hide();
+        }
+
+        private void dgv_alunos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int linha = dgv_alunos.CurrentCell.RowIndex;
+            if (linha == -1)
+                return;
+            naluno = int.Parse(dgv_alunos.Rows[linha].Cells[0].Value.ToString());
+            //esconder o botão de adicionar novo
+            bt_guardar.Visible = false;
+            //preencher os form com os dados do livro selecionado
+            alunos l = new alunos(bd);
+            l.naluno = naluno;
+            l.Procurar();
+            tb_nome.Text = l.nome;
+            tb_email.Text = l.email;
+            tb_codigopostal.Text = l.codigopostal;
+            tb_morada.Text = l.morada;
+            tb_telefone.Text = l.telefone;
+            dtp_data.Value = l.data_nascimento;
+
+
+            //mostrar os botões editar/eliminar/cancelar
+            bt_editar.Visible = true;
+            bt_eliminar.Visible = true;
         }
     }
     

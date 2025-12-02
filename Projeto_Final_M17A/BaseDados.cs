@@ -72,35 +72,37 @@ namespace Projeto_Final_M17A
             ligacaoSQL.ChangeDatabase(this.NomeBD);
             //criar tabelas
             //criar tabela livros
-            sql = @"create table Alunos (
-            idaluno INT IDENTITY(1,1) PRIMARY KEY,
+            sql = @"create table alunos (
+            naluno INT IDENTITY(1,1) PRIMARY KEY,
             nome varchar(100) not null ,
-            data_nascimento date CHECK (DATEDIFF (year,data_nascimento,GETDATE())>0),
+            data_nascimento DateTime CHECK (DATEDIFF (year,data_nascimento,GETDATE())>0),
             email varchar(100) CHECK (email LIKE '%@%.%') ,
             telefone varchar(15), 
             morada varchar(200),
             codigo_postal varchar(10) CHECK (codigo_postal LIKE '[1-9][0-9][0-9][0-9]-[0-9][0-9][0-9]'), 
+            ativo BIT DEFAULT 1,
             );
             CREATE TABLE Cursos(
-            id_curso INT IDENTITY(1,1) PRIMARY KEY,
+            ncurso INT IDENTITY(1,1) PRIMARY KEY,
             nome_curso VARCHAR(100) NOT NULL,
             descricao TEXT,
-            duracao_meses INT CHECK (duracao_meses > 0 AND duracao_meses <= 36),
-            carga_horaria INT CHECK (carga_horaria > 0 AND carga_horaria <= 3700),
+            duracaomeses INT CHECK (duracaomeses > 0 AND duracaomeses <= 36),
+            cargahoraria INT CHECK (cargahoraria > 0 AND cargahoraria <= 3700),
             nivel VARCHAR(13)  CHECK (nivel IN ('Básico', 'Intermediário', 'Avançado')), -- Básico, Intermediário, Avançado
             ativo BIT DEFAULT 1,
 
             );
             CREATE TABLE Matriculas(
             id_matricula INT IDENTITY(1,1) PRIMARY KEY,
-            id_aluno INT NOT NULL,
-            id_curso INT NOT NULL,
+            naluno INT NOT NULL,
+            ncurso INT NOT NULL,
+            ativo BIT DEFAULT 1,
             data_matricula DATE DEFAULT GETDATE(),
             data_inicio DATE,
             data_termino DATE ,
             estado BIT DEFAULT 1, -- Ex: sim ou nao
-            FOREIGN KEY (id_aluno) REFERENCES Alunos(id_aluno),
-            FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso),
+            FOREIGN KEY (naluno) REFERENCES Alunos(naluno),
+            FOREIGN KEY (ncurso) REFERENCES Cursos(ncurso),
 
             constraint valida_data_inicio check (data_inicio >= data_matricula),
             constraint valida_data_termino check (data_termino > data_inicio),
@@ -132,6 +134,11 @@ namespace Projeto_Final_M17A
             registos.Close();
             comando.Dispose();
             return dados;
+        }
+
+        internal void executarComando(string sql)
+        {
+            throw new NotImplementedException();
         }
     }
 }

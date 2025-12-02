@@ -16,10 +16,15 @@ namespace Projeto_Final_M17A.Cursos
     {
         BaseDados bd;
         int ncurso =0;
+        
         public F_cursos(BaseDados bd)
         {
+            InitializeComponent();
             this.bd = bd;
+            
         }
+
+   
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -27,10 +32,10 @@ namespace Projeto_Final_M17A.Cursos
             cursos novo = new cursos(bd);
             novo.ncurso = ncurso;
             // preencher os dados do curso
-            novo.ncurso = int.Parse(tb_idcurso.Text);
-            novo.nomecurso = tb_nomecurso.Text;
-            novo.descrição = tb_descricao.Text;
-            novo.nivel = tb_nivel.Text;
+            
+            novo.nome_curso = tb_nomecurso.Text;
+            novo.descricao = tb_descricao.Text;
+            novo.nivel = cb_nivel.Text;
             novo.duracaomeses = tb_duracao.Text;
             novo.cargahoraria = tb_horario.Text;
             // validar os dados
@@ -46,7 +51,7 @@ namespace Projeto_Final_M17A.Cursos
                 return;
             }
             // guardar os dados na base de dados
-            novo.Adicionar();
+            novo.Atualizar();
 
             // limpar o formulario
             limparForm();
@@ -62,10 +67,10 @@ namespace Projeto_Final_M17A.Cursos
             // criar um objeto do tipo curso
             cursos novo = new cursos(bd);
             // preencher os dados do curso
-            novo.ncurso = int.Parse(tb_idcurso.Text);
-            novo.nomecurso = tb_nomecurso.Text;
-            novo.nivel = tb_nivel.Text;
-            novo.descrição = tb_descricao.Text;
+            
+            novo.nome_curso = tb_nomecurso.Text;
+            novo.nivel = cb_nivel.Text;
+            novo.descricao = tb_descricao.Text;
             novo.duracaomeses = tb_duracao.Text;
             novo.cargahoraria = tb_horario.Text;
             // validar os dados
@@ -95,9 +100,9 @@ namespace Projeto_Final_M17A.Cursos
 
         private void limparForm()
         {
-            tb_idcurso.Text = "";
+            
             tb_nomecurso.Text = "";
-            tb_nivel.Text = "";
+            cb_nivel.Text = "";
             tb_horario.Text = "";
             tb_duracao.Text = "";
             tb_descricao.Text = "";
@@ -131,7 +136,7 @@ namespace Projeto_Final_M17A.Cursos
         {
             if (ncurso == 0)
             {
-                MessageBox.Show("Selecione um aluno para eliminar.");
+                MessageBox.Show("Selecione um curso para eliminar.");
                 return;
             }
 
@@ -153,7 +158,7 @@ namespace Projeto_Final_M17A.Cursos
         private void tb_pesquisa2_TextChanged(object sender, EventArgs e)
         {
             cursos a = new cursos(bd);
-            dgv_cursos.DataSource = a.Procurar("nome", tb_pesquisa2.Text);
+            dgv_cursos.DataSource = a.Procurar("nome_curso", tb_pesquisa2.Text);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -161,6 +166,43 @@ namespace Projeto_Final_M17A.Cursos
             F_matriculas tela = new F_matriculas(bd);
             tela.Show();
             this.Hide();
+        }
+
+        private void dgv_cursos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int linha = dgv_cursos.CurrentCell.RowIndex;
+            if (linha == -1)
+                return;
+            ncurso = int.Parse(dgv_cursos.Rows[linha].Cells[0].Value.ToString());
+            //esconder o botão de adicionar novo
+            bt_guardar.Visible = false;
+            //preencher os form com os dados do curso selecionado
+            cursos l = new cursos(bd);
+            l.ncurso = ncurso;
+            l.Procurar();
+            tb_descricao.Text = l.descricao;
+            tb_duracao.Text = l.duracaomeses;
+            tb_horario.Text = l.cargahoraria;
+            tb_nomecurso.Text = l.nome_curso;
+            cb_nivel.Text = l.nivel;
+
+
+            //mostrar os botões editar/eliminar/cancelar
+            bt_editar.Visible = true;
+            bt_remover.Visible = true;
+        }
+
+        private void cb_nivel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            limparForm();
+            ncurso = 0;
+            bt_editar.Visible = false;
+
         }
     }
     
