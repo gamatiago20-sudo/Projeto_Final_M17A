@@ -44,24 +44,27 @@
             this.bt_verMatriculas = new System.Windows.Forms.Button();
             this.bt_estatisticas = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtv_matriculas)).BeginInit();
             this.SuspendLayout();
             // 
             // cb_alunos
             // 
             this.cb_alunos.FormattingEnabled = true;
-            this.cb_alunos.Location = new System.Drawing.Point(140, 40);
+            this.cb_alunos.Location = new System.Drawing.Point(105, 32);
+            this.cb_alunos.Margin = new System.Windows.Forms.Padding(2);
             this.cb_alunos.Name = "cb_alunos";
-            this.cb_alunos.Size = new System.Drawing.Size(350, 24);
+            this.cb_alunos.Size = new System.Drawing.Size(264, 21);
             this.cb_alunos.TabIndex = 0;
             this.toolTip1.SetToolTip(this.cb_alunos, "Selecione o aluno a matricular");
             // 
             // cb_cursos
             // 
             this.cb_cursos.FormattingEnabled = true;
-            this.cb_cursos.Location = new System.Drawing.Point(140, 80);
+            this.cb_cursos.Location = new System.Drawing.Point(105, 65);
+            this.cb_cursos.Margin = new System.Windows.Forms.Padding(2);
             this.cb_cursos.Name = "cb_cursos";
-            this.cb_cursos.Size = new System.Drawing.Size(350, 24);
+            this.cb_cursos.Size = new System.Drawing.Size(264, 21);
             this.cb_cursos.TabIndex = 1;
             this.toolTip1.SetToolTip(this.cb_cursos, "Selecione o curso");
             // 
@@ -72,9 +75,10 @@
             // 
             // bt_matricular
             // 
-            this.bt_matricular.Location = new System.Drawing.Point(220, 220);
+            this.bt_matricular.Location = new System.Drawing.Point(115, 193);
+            this.bt_matricular.Margin = new System.Windows.Forms.Padding(2);
             this.bt_matricular.Name = "bt_matricular";
-            this.bt_matricular.Size = new System.Drawing.Size(128, 51);
+            this.bt_matricular.Size = new System.Drawing.Size(96, 41);
             this.bt_matricular.TabIndex = 5;
             this.bt_matricular.Text = "Matricular";
             this.bt_matricular.UseVisualStyleBackColor = true;
@@ -83,11 +87,12 @@
             // dtv_matriculas
             // 
             this.dtv_matriculas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtv_matriculas.Location = new System.Drawing.Point(520, 40);
+            this.dtv_matriculas.Location = new System.Drawing.Point(390, 32);
+            this.dtv_matriculas.Margin = new System.Windows.Forms.Padding(2);
             this.dtv_matriculas.Name = "dtv_matriculas";
             this.dtv_matriculas.RowHeadersWidth = 51;
             this.dtv_matriculas.RowTemplate.Height = 24;
-            this.dtv_matriculas.Size = new System.Drawing.Size(515, 365);
+            this.dtv_matriculas.Size = new System.Drawing.Size(386, 297);
             this.dtv_matriculas.TabIndex = 8;
             this.dtv_matriculas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dtv_matriculas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtv_matriculas_CellContentClick);
@@ -95,9 +100,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 43);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 9;
             this.label1.Text = "Aluno";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -105,43 +112,51 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 83);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(30, 67);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 16);
+            this.label2.Size = new System.Drawing.Size(47, 16);
             this.label2.TabIndex = 10;
             this.label2.Text = "Curso";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 123);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 96);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 16);
+            this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Data início";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 163);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(30, 128);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 16);
+            this.label4.Size = new System.Drawing.Size(95, 16);
             this.label4.TabIndex = 12;
             this.label4.Text = "Data término";
             // 
             // dtp_dataInicio
             // 
-            this.dtp_dataInicio.Location = new System.Drawing.Point(140, 118);
+            this.dtp_dataInicio.Location = new System.Drawing.Point(115, 96);
+            this.dtp_dataInicio.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_dataInicio.Name = "dtp_dataInicio";
-            this.dtp_dataInicio.Size = new System.Drawing.Size(200, 22);
+            this.dtp_dataInicio.Size = new System.Drawing.Size(151, 20);
             this.dtp_dataInicio.TabIndex = 2;
             this.toolTip1.SetToolTip(this.dtp_dataInicio, "Data de início do curso");
             // 
             // dtp_dataTermino
             // 
-            this.dtp_dataTermino.Location = new System.Drawing.Point(140, 158);
+            this.dtp_dataTermino.Location = new System.Drawing.Point(129, 128);
+            this.dtp_dataTermino.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_dataTermino.Name = "dtp_dataTermino";
-            this.dtp_dataTermino.Size = new System.Drawing.Size(200, 22);
+            this.dtp_dataTermino.Size = new System.Drawing.Size(151, 20);
             this.dtp_dataTermino.TabIndex = 3;
             this.toolTip1.SetToolTip(this.dtp_dataTermino, "Data prevista de término");
             // 
@@ -150,18 +165,20 @@
             this.chk_estado.AutoSize = true;
             this.chk_estado.Checked = true;
             this.chk_estado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk_estado.Location = new System.Drawing.Point(43, 196);
+            this.chk_estado.Location = new System.Drawing.Point(32, 159);
+            this.chk_estado.Margin = new System.Windows.Forms.Padding(2);
             this.chk_estado.Name = "chk_estado";
-            this.chk_estado.Size = new System.Drawing.Size(115, 20);
+            this.chk_estado.Size = new System.Drawing.Size(97, 17);
             this.chk_estado.TabIndex = 4;
             this.chk_estado.Text = "Matrícula ativa";
             this.chk_estado.UseVisualStyleBackColor = true;
             // 
             // bt_verMatriculas
             // 
-            this.bt_verMatriculas.Location = new System.Drawing.Point(520, 420);
+            this.bt_verMatriculas.Location = new System.Drawing.Point(390, 341);
+            this.bt_verMatriculas.Margin = new System.Windows.Forms.Padding(2);
             this.bt_verMatriculas.Name = "bt_verMatriculas";
-            this.bt_verMatriculas.Size = new System.Drawing.Size(150, 40);
+            this.bt_verMatriculas.Size = new System.Drawing.Size(112, 32);
             this.bt_verMatriculas.TabIndex = 6;
             this.bt_verMatriculas.Text = "Ver matrículas";
             this.bt_verMatriculas.UseVisualStyleBackColor = true;
@@ -169,19 +186,31 @@
             // 
             // bt_estatisticas
             // 
-            this.bt_estatisticas.Location = new System.Drawing.Point(700, 420);
+            this.bt_estatisticas.Location = new System.Drawing.Point(525, 341);
+            this.bt_estatisticas.Margin = new System.Windows.Forms.Padding(2);
             this.bt_estatisticas.Name = "bt_estatisticas";
-            this.bt_estatisticas.Size = new System.Drawing.Size(180, 40);
+            this.bt_estatisticas.Size = new System.Drawing.Size(135, 32);
             this.bt_estatisticas.TabIndex = 7;
             this.bt_estatisticas.Text = "Estatísticas por curso";
             this.bt_estatisticas.UseVisualStyleBackColor = true;
             this.bt_estatisticas.Click += new System.EventHandler(this.bt_estatisticas_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(216, 193);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 43);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // F_matriculas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.bt_estatisticas);
             this.Controls.Add(this.bt_verMatriculas);
             this.Controls.Add(this.chk_estado);
@@ -195,7 +224,6 @@
             this.Controls.Add(this.bt_matricular);
             this.Controls.Add(this.cb_cursos);
             this.Controls.Add(this.cb_alunos);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_matriculas";
             this.Text = "Matrículas";
             this.Load += new System.EventHandler(this.F_matriculas_Load);
@@ -222,5 +250,6 @@
         private System.Windows.Forms.Button bt_verMatriculas;
         private System.Windows.Forms.Button bt_estatisticas;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button1;
     }
 }

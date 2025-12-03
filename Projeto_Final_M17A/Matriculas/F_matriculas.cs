@@ -162,5 +162,29 @@ namespace Projeto_Final_M17A.Matriculas
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Eliminarmatricula();
+        }
+
+        private void Eliminarmatricula()
+        {
+            if (id_matricula == 0)
+            {
+                MessageBox.Show("Selecione um aluno para eliminar.");
+                return;
+            }
+
+            //confirmacao
+            if (MessageBox.Show("Confirmar", "Tem a certeza que pretende eliminar a matricula selecionada?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                matriculas apagar = new matriculas(bd);
+                apagar.id_matricula = id_matricula;
+                apagar.Apagar();
+                ListarMatriculas();
+                id_matricula = 0;
+            }
+        }
     }
 }

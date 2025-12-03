@@ -166,5 +166,12 @@ namespace Projeto_Final_M17A.Matriculas
                 ORDER BY TotalMatriculas DESC";
             return bd.DevolveSQL(sql);
         }
+
+        internal void Apagar()
+        {
+            // Isto é seguro porque o id_matricula é um inteiro e nao é inserido pelo utilizador
+            string sql = "DELETE FROM Matriculas WHERE id_matricula =" + id_matricula;
+            bd.ExecutarSQL(sql);
+        }
     }
 }
