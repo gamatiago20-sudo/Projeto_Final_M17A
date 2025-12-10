@@ -102,7 +102,7 @@ namespace Projeto_Final_M17A
             data_termino DATE ,
             estado BIT DEFAULT 1, -- Ex: sim ou nao
             FOREIGN KEY (naluno) REFERENCES Alunos(naluno) ON DELETE CASCADE,
-            FOREIGN KEY (ncurso) REFERENCES Cursos(ncurso),
+            FOREIGN KEY (ncurso) REFERENCES Cursos(ncurso) ON DELETE CASCADE,
 
             constraint valida_data_inicio check (data_inicio >= data_matricula),
             constraint valida_data_termino check (data_termino > data_inicio),

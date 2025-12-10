@@ -31,9 +31,7 @@ namespace Projeto_Final_M17A.Matriculas
                 Alunos.alunos novo = new Alunos.alunos(bd);
                 novo.naluno = int.Parse(dr["naluno"].ToString());
                 novo.nome = dr["nome"].ToString();
-                novo.ativo = bool.Parse(dr["ativo"].ToString());
-                if (novo.ativo == true)
-                    cb_alunos.Items.Add(novo);
+                cb_alunos.Items.Add(novo);
             }
         }
 
@@ -79,7 +77,7 @@ namespace Projeto_Final_M17A.Matriculas
         {
             if (cb_alunos.SelectedIndex == -1 || cb_cursos.SelectedIndex == -1)
             {
-                MessageBox.Show("Deve selecionar um Aluno e um Curso.");
+                MessageBox.Show("Deve selecionar uma Matricula e um Curso.");
                 return;
             }
 
@@ -106,7 +104,7 @@ namespace Projeto_Final_M17A.Matriculas
             mat.data_inicio = dataInicio;
             mat.data_termino = dataTermino;
             mat.estado = chk_estado.Checked;
-            mat.RegistarEmprestimo();
+            mat.RegistarMatricula();
 
             PreencheCBAlunos();
             ListarMatriculas();
@@ -120,27 +118,27 @@ namespace Projeto_Final_M17A.Matriculas
 
             id_matricula = int.Parse(dtv_matriculas.Rows[linha].Cells[0].Value.ToString());
 
-            matriculas m = new matriculas(bd);
-            m.id_matricula = id_matricula;
-            m.Procurar();
+            matriculas matriculas = new matriculas(bd);
+            matriculas.id_matricula = id_matricula;
+            matriculas.Procurar();
 
             // selecionar o aluno correspondente no combobox
-            var aluno = cb_alunos.Items.Cast<Alunos.alunos>().FirstOrDefault(a => a.naluno == m.naluno);
+            var aluno = cb_alunos.Items.Cast<Alunos.alunos>().FirstOrDefault(alunos => alunos.naluno == matriculas.naluno);
             if (aluno != null)
                 cb_alunos.SelectedItem = aluno;
 
             // selecionar o curso correspondente no combobox
-            var curso = cb_cursos.Items.Cast<Cursos.cursos>().FirstOrDefault(c => c.ncurso == m.ncurso);
+            var curso = cb_cursos.Items.Cast<Cursos.cursos>().FirstOrDefault(cursos => cursos.ncurso == matriculas.ncurso);
             if (curso != null)
                 cb_cursos.SelectedItem = curso;
 
-            if (m.data_inicio != DateTime.MinValue)
-                dtp_dataInicio.Value = m.data_inicio;
+            if (matriculas.data_inicio != DateTime.MinValue)
+                dtp_dataInicio.Value = matriculas.data_inicio;
 
-            if (m.data_termino != DateTime.MinValue)
-                dtp_dataTermino.Value = m.data_termino;
+            if (matriculas.data_termino != DateTime.MinValue)
+                dtp_dataTermino.Value = matriculas.data_termino;
 
-            chk_estado.Checked = m.estado;
+            chk_estado.Checked = matriculas.estado;
         }
 
         private void dtv_matriculas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -154,8 +152,8 @@ namespace Projeto_Final_M17A.Matriculas
 
         private void bt_estatisticas_Click(object sender, EventArgs e)
         {
-            matriculas m = new matriculas(bd);
-            dtv_matriculas.DataSource = m.ContarMatriculasPorCurso();
+            matriculas matriculas = new matriculas(bd);
+            dtv_matriculas.DataSource = matriculas.ContarMatriculasPorCurso();
         }
 
         private void label1_Click(object sender, EventArgs e)

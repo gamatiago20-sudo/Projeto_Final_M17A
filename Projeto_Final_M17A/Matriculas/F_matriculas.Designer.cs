@@ -57,6 +57,7 @@
             this.cb_alunos.Size = new System.Drawing.Size(264, 21);
             this.cb_alunos.TabIndex = 0;
             this.toolTip1.SetToolTip(this.cb_alunos, "Selecione o aluno a matricular");
+            
             // 
             // cb_cursos
             // 
@@ -67,6 +68,7 @@
             this.cb_cursos.Size = new System.Drawing.Size(264, 21);
             this.cb_cursos.TabIndex = 1;
             this.toolTip1.SetToolTip(this.cb_cursos, "Selecione o curso");
+           
             // 
             // sqlCommand1
             // 

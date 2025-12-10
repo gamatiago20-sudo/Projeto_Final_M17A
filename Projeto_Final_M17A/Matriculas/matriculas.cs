@@ -23,7 +23,7 @@ namespace Projeto_Final_M17A.Matriculas
             this.bd = bd;
         }
 
-        public void RegistarEmprestimo()
+        public void RegistarMatricula()
         {
             // inserir na tabela Matriculas
             string SQL = "INSERT INTO Matriculas(naluno,ncurso,data_inicio,data_termino,estado) VALUES (@naluno,@ncurso,@data_inicio,@data_termino,@estado)";
