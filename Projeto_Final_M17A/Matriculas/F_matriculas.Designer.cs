@@ -50,6 +50,7 @@
             // 
             // cb_alunos
             // 
+            this.cb_alunos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_alunos.FormattingEnabled = true;
             this.cb_alunos.Location = new System.Drawing.Point(105, 32);
             this.cb_alunos.Margin = new System.Windows.Forms.Padding(2);
@@ -57,10 +58,10 @@
             this.cb_alunos.Size = new System.Drawing.Size(264, 21);
             this.cb_alunos.TabIndex = 0;
             this.toolTip1.SetToolTip(this.cb_alunos, "Selecione o aluno a matricular");
-            
             // 
             // cb_cursos
             // 
+            this.cb_cursos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_cursos.FormattingEnabled = true;
             this.cb_cursos.Location = new System.Drawing.Point(105, 65);
             this.cb_cursos.Margin = new System.Windows.Forms.Padding(2);
@@ -68,7 +69,6 @@
             this.cb_cursos.Size = new System.Drawing.Size(264, 21);
             this.cb_cursos.TabIndex = 1;
             this.toolTip1.SetToolTip(this.cb_cursos, "Selecione o curso");
-           
             // 
             // sqlCommand1
             // 

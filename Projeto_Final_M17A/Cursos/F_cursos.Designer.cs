@@ -196,6 +196,7 @@
             // 
             // cb_nivel
             // 
+            this.cb_nivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_nivel.FormattingEnabled = true;
             this.cb_nivel.Items.AddRange(new object[] {
             "Básico",
@@ -210,7 +211,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(75, 376);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 46);
             this.button1.TabIndex = 20;

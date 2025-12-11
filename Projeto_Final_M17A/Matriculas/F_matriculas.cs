@@ -77,7 +77,7 @@ namespace Projeto_Final_M17A.Matriculas
         {
             if (cb_alunos.SelectedIndex == -1 || cb_cursos.SelectedIndex == -1)
             {
-                MessageBox.Show("Deve selecionar uma Matricula e um Curso.");
+                MessageBox.Show("Deve selecionar um Aluno e um Curso.");
                 return;
             }
 
